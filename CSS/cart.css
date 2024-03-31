@@ -1,0 +1,278 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+}
+
+body, html {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #000;    
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    background-color: #131313;
+    border: 1px solid #fff;
+}
+
+.navigation {
+    display: flex;
+    padding: .8em;
+    position: relative;
+    right: 50px;
+}
+
+.burgermenu {
+    display: none;
+    padding: 0.5rem;
+    cursor: pointer;
+ }
+
+ .line {
+    height: 2px;
+    width: 35px;
+    margin: 0.5rem 0;
+    background: #daf8e3;
+    transition: transform 0.75s ease, opacity 0.75s ease;
+ }
+
+ nav.show .line1 {
+    transform: translate(-10px)
+    rotate(45deg) translate(15px);
+ }
+
+ nav.show .line2 {
+    opacity: 0;
+ }
+
+ nav.show .line3 {
+    transform: translate(-10px)
+    rotate(-45deg) translate(15px);
+ }
+
+ nav.show .navigation {
+    transform: translateX(0%);
+ }
+
+.navigation li {
+    
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    display: block;
+    position: relative;
+}
+
+.navigation li a {
+    display: block;
+    padding: 20px 25px;
+    color: #fff;
+    text-align: center;
+}
+
+.navigation li ul.dropdown li {
+    display: block;
+}
+
+.navigation li ul.dropdown {
+    width: 100%;
+    background: #131313;
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+
+.downarrow {
+    font-size: 0.8em;
+    margin-left: 5px;
+}
+.navigation li a:hover {
+    background: #1f1f1f;
+    border-radius: 10px;
+}
+
+.navigation li:hover ul.dropdown {
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo {
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    padding: 1em;
+    font-size: 20px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.cart1 {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -5px;
+    right: 2px;
+}
+
+.yourcart {
+    
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 0 auto;
+}
+
+.cartItemImage {
+    border-radius: 50px;
+    width: 349px;
+    height: auto;
+}
+
+h2, p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    font-size: 2em;
+}
+
+.total {
+    font-size: 2em;
+    padding: 1em;
+    color: #fff;
+}
+
+.container {
+
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(180deg, rgba(217, 217, 217, 0) 0%, rgba(217, 217, 217, 0.16) 100%);
+    margin: 0 auto;
+    padding: 2em;
+}
+
+.cartItems {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    flex-direction: column;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.clearBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    padding: .5em;
+    height: auto;
+    background-color: #2b2b2b;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.checkoutBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    padding: .5em;
+    margin-top: 1em;
+    height: auto;
+    background-color: #2b2b2b;
+    color: #fff;
+    border-radius: 10px;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    body {
+        display: block;
+    }
+    .burgermenu {
+        display: block;
+        position: relative;
+        margin-right: 15px;
+        z-index: 4;
+    }
+
+    nav {
+        position: relative;
+        z-index: 3;
+    }
+    .navigation {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        background: linear-gradient(50deg, #000, #0b0b0bf0);
+        transform: translateX(100%);
+        transition: transform 1s ease;
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+        z-index: 2;
+    }
+
+    .cart {
+        position: relative;
+    }
+
+    .container {
+        width: 100%; 
+        left: 0; 
+        top: 25vh; 
+    }
+    .yourcart {
+        width: 100%; 
+    }
+}

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="css/item-page.css">
+    <link href="https://fonts.cdnfonts.com/css/optician-sans" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet"> 
+</head>
+<body>
+
+<nav>
+    <div class="logo"><a href="index.html">REBEL</a></div>
+
+    <ul class="navigation">
+        <li>
+            <a href="#">PRODUCTS<span class="downarrow">&#9660;</span></a>
+            <ul class="dropdown">
+                <li><a href="index.html">Sales</a></li>
+                <li><a href="products.html">Outerwear</a></li>
+                <li><a href="products.html">Loungewear</a></li>
+                <li><a href="products.html">Casual Tees</a></li>
+                <li><a href="products.html">Athletics</a></li>
+            </ul>
+        </li>
+        <li><a href="#">CONTACT</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="cart.html"><img src="IMG/icon/cart-m.png" class="cart1"></a></li>
+    </ul>
+
+    <div class="burgermenu">
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="main">
+        <img src="" alt="Product Image" class="mainPic">
+    </div>
+    <div class="miniPics"></div>
+    <div class="info">
+        <div class="text">
+            <h1 class="iTTitle"></h1>
+            <p class="iTContent"></p>
+            <h1 class="price"></h1>
+            <div class="stars"></div>
+            <div class="sizes"></div>
+            <button class="cart">Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Define products array
+    var products = [
+        {
+            id: '001',
+            productName: 'Metallic Safety Jacket',
+            description: "Shine with confidence in our metallic safety jacket. Made from faux leather, cotton, and polyester, it offers a unique style along with waterproof protection.",
+            price: 59.99,
+            mainImage: 'IMG/item-page/1.png',
+            subImages: [
+                'IMG/item-page/1m.jpg',
+                'IMG/item-page/1-am.jpg',
+                'IMG/item-page/1-bm.jpg',
+                'IMG/item-page/1-cm.jpg',
+                'IMG/item-page/1-dm.jpg',
+            ],
+        },
+        {
+            id: '002',
+            productName: 'Tri-colour Zip Jacket',
+            description: "Stay light and vibrant with our tri-colour zip jacket. Made from a blend of nylon, polycotton, and polyester, it's stylish and waterproof.",
+            price: 39.99,
+            mainImage: 'IMG/products/2m.jpg',
+            subImages: [
+                'IMG/item-page/1m.jpg',
+                'IMG/item-page/1-am.jpg',
+                'IMG/item-page/1-bm.jpg',
+                'IMG/item-page/1-cm.jpg',
+                'IMG/item-page/1-dm.jpg',
+            ],
+        },
+        {
+
+            id: '003',
+            productName: 'Blue + Green Zip Jacket',
+            description: "Stay light and vibrant with our tri-colour zip jacket. Made from a blend of nylon, polycotton, and polyester, it's stylish and waterproof.",
+            price: 39.99,
+            mainImage: 'IMG/products/3m.jpg',
+            subImages: [
+                'IMG/item-page/1m.jpg',
+                'IMG/item-page/1-am.jpg',
+                'IMG/item-page/1-bm.jpg',
+                'IMG/item-page/1-cm.jpg',
+                'IMG/item-page/1-dm.jpg',
+            ],
+        },
+
+        {
+            id: '004',
+            productName: 'Neon Pink Vinyl Jacket',
+            description: "Stay dry in style with our neon pink vinyl jacket. Waterproof and fashion-forward, it's made from PVC, vinyl, and plastic, perfect for both men and women. This eye-catching jacket is a practical yet chic choice for rainy days, ensuring you stay dry while making a bold fashion statement.",
+            price: 59.99,
+            mainImage: 'IMG/products/2m.jpg',
+            subImages: [
+                'IMG/item-page/1m.jpg',
+                'IMG/item-page/1-am.jpg',
+                'IMG/item-page/1-bm.jpg',
+                'IMG/item-page/1-cm.jpg',
+                'IMG/item-page/1-dm.jpg',
+            ],
+        },
+        {
+            id: '005',
+            productName: 'Green Zip Jacket',
+            description: "Stay light and vibrant with our green zip jacket. Made from a blend of nylon, polycotton, and polyester, it's stylish and waterproof.",
+            price: 59.99,
+            mainImage: 'IMG/products/1m.jpg',
+            subImages: [
+                'IMG/item-page/1m.jpg',
+                'IMG/item-page/1-am.jpg',
+                'IMG/item-page/1-bm.jpg',
+                'IMG/item-page/1-cm.jpg',
+                'IMG/item-page/1-dm.jpg',
+            ],
+        },
+        {
+            id: '006',
+            productName: 'Black Vinyl Jacket',
+            description: "Stay dry in style with our black vinyl jacket. Waterproof and fashion-forward, it's made from PVC, vinyl, and plastic, perfect for both men and women. This classic jacket is a practical yet chic choice for rainy days, ensuring you stay dry while making a bold fashion statement.",
+            price: 59.99,
+            mainImage: 'IMG/products/3m.jpg',
+            subImages: [
+                'IMG/item-page/1m.jpg',
+                'IMG/item-page/1-am.jpg',
+                'IMG/item-page/1-bm.jpg',
+                'IMG/item-page/1-cm.jpg',
+                'IMG/item-page/1-dm.jpg',
+            ],
+        },
+// Add more product objects here...
+];
+        // Add more product objects here...
+
+
+    // Get the product ID from the URL
+    var urlParams = new URLSearchParams(window.location.search);
+    var productId = urlParams.get('id');
+
+    // Find the product in the array
+    var product = products.find(p => p.id === productId);
+
+    // Display product details on the page if the product exists
+    if (product) {
+        document.querySelector('.iTTitle').textContent = product.productName;
+        document.querySelector('.iTContent').textContent = product.description;
+        document.querySelector('.price').textContent = '$' + product.price.toFixed(2);
+        document.querySelector('.mainPic').src = product.mainImage;
+
+        // Display sub product images
+        var miniPics = document.querySelector('.miniPics');
+        product.subImages.forEach(function(subImage) {
+            var miniLink = document.createElement('a');
+            miniLink.href = '#';
+            miniLink.classList.add('mini-link');
+
+            var miniDiv = document.createElement('div');
+            miniDiv.classList.add('mini');
+
+            var miniImg = document.createElement('img');
+            miniImg.src = subImage;
+            miniImg.alt = 'Description of the image';
+            miniImg.classList.add('mini-img');
+
+            miniDiv.appendChild(miniImg);
+            miniLink.appendChild(miniDiv);
+            miniPics.appendChild(miniLink);
+        });
+    } else {
+        alert('Product not found!');
+    }
+
+    // Add event listener to Add to Cart button
+    document.querySelector('.cart').addEventListener('click', function() {
+        // If product exists, add it to cart
+        if (product) {
+            addToCart(product);
+            // Redirect to cart page
+            window.location.href = 'cart.html';
+        } else {
+            alert('Product not found!');
+        }
+    });
+
+    // Function to add product to cart
+    function addToCart(product) {
+        // Get the cart items from localStorage
+        var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+        // Add the product to the cart items
+        cartItems.push(product);
+
+        // Save the updated cart items to localStorage
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    }
+</script>
+
+</body>
+</html>
